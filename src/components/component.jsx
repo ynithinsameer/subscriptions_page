@@ -200,7 +200,7 @@ export function Component() {
             <div className="grid gap-1">
               <h3 className="text-lg font-bold">Reporting</h3>
               <p className="text-muted-foreground">
-                Get detailed insights and analytics to track your team's progress.
+                Get detailed insights and analytics to track your team&apos;s progress.
               </p>
             </div>
             <div className="grid gap-1">
