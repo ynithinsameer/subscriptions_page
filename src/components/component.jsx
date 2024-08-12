@@ -44,9 +44,9 @@ export function Component() {
   const basicPrice = isAnnual ? 2000 : 200
   const proPrice = isAnnual ? 9000 : 800
   return (
-    (<div className="flex flex-col min-h-dvh">
+    (<div className="flex flex-col min-h-dvh bg-customRed">
       <header
-        className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-14 flex items-center bg-primary text-primary-foreground rounded-b-lg shadow-md bg-customRed">
+        className="bg-customRed !important fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-14 flex items-center bg-primary text-primary-foreground shadow-md">
         <Link href="https://www.mahagathe.org/" className="flex items-center justify-center" prefetch={false}>
           <Image src={logo2} alt="Mahagathe Logo" width={40} height={40} className="rounded-lg" /> {/* Adjust width and height as needed */}
           <span className="sr-only">Mahagathe Logo</span>
