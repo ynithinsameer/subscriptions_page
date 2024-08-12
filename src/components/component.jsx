@@ -32,56 +32,59 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
+import Image from 'next/image';
+import logo from '../images/Mahagathe Logo PNG.png';
+import logo2 from '../images/Logo Better Without BG.png'; 
 
 export function Component() {
   const [isAnnual, setIsAnnual] = useState(false)
   const handlePlanToggle = (checked) => {
     setIsAnnual(checked)
   }
-  const basicPrice = isAnnual ? 99 : 9
-  const proPrice = isAnnual ? 199 : 19
+  const basicPrice = isAnnual ? 2000 : 200
+  const proPrice = isAnnual ? 9000 : 800
   return (
     (<div className="flex flex-col min-h-dvh">
       <header
-        className="px-4 lg:px-6 h-14 flex items-center bg-primary text-primary-foreground rounded-lg shadow-md">
-        <Link href="#" className="flex items-center justify-center" prefetch={false}>
-          <MountainIcon className="size-6 text-primary-foreground" />
-          <span className="sr-only">Acme Subscription</span>
+        className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-14 flex items-center bg-primary text-primary-foreground rounded-b-lg shadow-md bg-customRed">
+        <Link href="https://www.mahagathe.org/" className="flex items-center justify-center" prefetch={false}>
+          <Image src={logo2} alt="Mahagathe Logo" width={40} height={40} className="rounded-lg" /> {/* Adjust width and height as needed */}
+          <span className="sr-only">Mahagathe Logo</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link
-            href="#"
+            href="#subscription-plans"
             className="text-sm font-medium hover:underline underline-offset-4 text-primary-foreground"
             prefetch={false}>
             Subscription
           </Link>
           <Link
-            href="#"
+            href="#subscription-details"
             className="text-sm font-medium hover:underline underline-offset-4 text-primary-foreground"
             prefetch={false}>
             Details
           </Link>
           <Link
-            href="#"
+            href="#get-started"
             className="text-sm font-medium hover:underline underline-offset-4 text-primary-foreground"
             prefetch={false}>
             Call to Action
           </Link>
           <Link
-            href="#"
+            href="#featured-content"
             className="text-sm font-medium hover:underline underline-offset-4 text-primary-foreground"
             prefetch={false}>
             Carousel
           </Link>
         </nav>
       </header>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+      <section id="subscription-plans" className="w-full py-12 md:py-24 lg:py-32 bg-background">
         <div className="container px-4 md:px-6 grid grid-cols-2 gap-8">
           <div className="flex items-center justify-center">
-            <div className="flex items-center justify-center">
-              <MountainIcon className="size-12 text-primary" />
-              <span className="sr-only">Acme Inc</span>
-            </div>
+          <div className="flex items-center justify-center">
+            <Image src={logo} alt="Mahagathe Logo" width={300} height={950} className="rounded-lg" />
+            <span className="sr-only">Mahagathe Logo</span>
+          </div>
           </div>
           <div className="space-y-10">
             <div
@@ -107,10 +110,10 @@ export function Component() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-baseline justify-center gap-2">
-                    <span className="text-4xl font-bold">${basicPrice}</span>
+                    <span className="text-4xl font-bold">Rs.{basicPrice}</span>
                     <span className="text-sm text-muted-foreground">/mo</span>
                   </div>
-                  <ul className="space-y-2 text-muted-foreground">
+                  {/* <ul className="space-y-2 text-muted-foreground">
                     <li>
                       <CheckIcon className="mr-2 inline-block h-4 w-4" />
                       1 user
@@ -123,10 +126,12 @@ export function Component() {
                       <CheckIcon className="mr-2 inline-block h-4 w-4" />
                       Basic support
                     </li>
-                  </ul>
+                  </ul> */}
                 </CardContent>
-                <CardFooter>
-                  <Button className="w-full">Subscribe</Button>
+                <CardFooter className="text-while">
+                  <Link href="#get-started" className="w-full">
+                  <Button className="w-full bg-customRed">Subscribe</Button>
+                  </Link>
                 </CardFooter>
               </Card>
               <Card className="rounded-lg shadow-md">
@@ -135,10 +140,10 @@ export function Component() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-baseline justify-center gap-2">
-                    <span className="text-4xl font-bold">${proPrice}</span>
+                    <span className="text-4xl font-bold">Rs.{proPrice}</span>
                     <span className="text-sm text-muted-foreground">/mo</span>
                   </div>
-                  <ul className="space-y-2 text-muted-foreground">
+                  {/* <ul className="space-y-2 text-muted-foreground">
                     <li>
                       <CheckIcon className="mr-2 inline-block h-4 w-4" />
                       5 users
@@ -151,17 +156,19 @@ export function Component() {
                       <CheckIcon className="mr-2 inline-block h-4 w-4" />
                       Priority support
                     </li>
-                  </ul>
+                  </ul> */}
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full">Subscribe</Button>
+                  <Link href="#get-started" className="w-full">
+                  <Button className="w-full bg-customRed">Subscribe</Button>
+                  </Link>
                 </CardFooter>
               </Card>
             </div>
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+      <section id="subscription-details" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
         <div className="container mx-auto px-4 md:px-6 space-y-10">
           <div className="flex flex-col items-center justify-center space-y-4 text-center w-full">
             <div className="space-y-2">
@@ -205,7 +212,7 @@ export function Component() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+      <section id="get-started" className="w-full py-12 md:py-24 lg:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-6 space-y-10">
           <div
             className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -221,11 +228,11 @@ export function Component() {
             <Input type="text" placeholder="Name" className="w-full" />
             <Input type="email" placeholder="Email" className="w-full" />
             <Input type="tel" placeholder="Phone" className="w-full" />
-            <Button className="w-full">Subscribe Now</Button>
+            <Button className="w-full bg-customRed">Subscribe Now</Button>
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+      <section id="featured-content" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
         <div className="container mx-auto px-4 md:px-6 space-y-10">
           <div
             className="flex flex-col items-center justify-center space-y-4 text-center">
